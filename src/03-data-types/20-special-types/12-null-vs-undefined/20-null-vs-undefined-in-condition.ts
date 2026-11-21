@@ -20,7 +20,7 @@ function logMessage(message: string | undefined | null): void {
     }
 }
 
-logMessage('Hello World'); // non-empty string is truthy
-logMessage(''); // empty string is falsy
-logMessage(undefined); // undefined is falsy
-logMessage(null);      // null is falsy
+logMessage('Hello World'); // non-empty string - truthy
+logMessage('');            // empty string ----- falsy
+logMessage(undefined); // undefined - falsy
+logMessage(null);      // null ------ falsy
