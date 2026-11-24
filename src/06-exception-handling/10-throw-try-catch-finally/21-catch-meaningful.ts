@@ -5,7 +5,7 @@ export {};
  * Good practice:
  * A catch block should handle the error appropriately.
  * If the error cannot be handled there, it should usually
- * be logged or rethrown.
+ * be rethrown so the caller can handle it.
  * For example:
  *  - log the error
  *  - recover from the error
@@ -25,23 +25,25 @@ function printLine(line: string): void {
     console.log(line);
 }
 
-// GOOD:
+// GOOD ✅:
 function tryPrintLineGood(line: string): void {
     try {
         printLine(line);
     } catch (error) {
+        // at least logging an error:
         console.error('An error occurred:', error);
+        // IMPORTANT: still missing recovering, rethrowing!
     }
 }
 
 tryPrintLineGood('Hello World');
 tryPrintLineGood('');
 
-// BAD:
+// BAD ❌:
 function tryPrintLineBad(line: string): void {
     try {
         printLine(line);
-    } catch (error) {}
+    } catch (error) {} // ❌ bad example, silent-catch hides error
 }
 
 tryPrintLineBad('Hello World');
