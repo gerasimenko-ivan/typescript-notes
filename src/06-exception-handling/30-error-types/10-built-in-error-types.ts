@@ -35,8 +35,4 @@ try {
      *   and stack trace
      */
     console.error(error);
-
-    if (error instanceof Error) {
-        console.error(error.message); // Output: Unable to load data
-    }
 }
