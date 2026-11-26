@@ -13,6 +13,15 @@ try {
 } catch (error) {
     if (error instanceof SyntaxError) {
         console.error('Invalid JSON:', error.message);
+    } else {
+        /*
+         * Rethrow unexpected errors.
+         *
+         * This else-block is not strictly necessary for this
+         * particular example, but it demonstrates an important
+         * practice: do not silently ignore unexpected errors.
+         */
+        throw error;
     }
 }
 /*
