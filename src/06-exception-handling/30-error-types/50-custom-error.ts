@@ -11,6 +11,10 @@ class UserNotFoundError extends Error {
     constructor(message: string) {
         super(message);
 
+        /*
+         * Human-readable kind of error.
+         * Overrides Error.prototype.name (which defaults to 'Error')
+         */
         this.name = 'UserNotFoundError';
     }
 }
