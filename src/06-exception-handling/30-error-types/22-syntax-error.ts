@@ -11,6 +11,7 @@ export {};
 try {
     JSON.parse('{ "name": "Tom" ');
 } catch (error) {
+    // narrowing error type:
     if (error instanceof SyntaxError) {
         console.error('Invalid JSON:', error.message);
     } else {

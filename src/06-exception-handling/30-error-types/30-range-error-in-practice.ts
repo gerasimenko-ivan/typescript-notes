@@ -15,6 +15,7 @@ function createArray(length: number): unknown[] | null {
 
         return array;
     } catch (error) {
+        // narrowing error type:
         if (error instanceof RangeError) {
             console.error(`Invalid array length=${length}:`, error.message);
         } else {

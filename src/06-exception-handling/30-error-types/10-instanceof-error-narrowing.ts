@@ -1,6 +1,8 @@
 export {};
 /*
- * Checking Error Types with instanceof
+ * Narrowing Error Types with instanceof
+ *
+ * (this concept needs to be introduced before different error types)
  *
  * The instanceof operator checks whether an object
  * is an instance of a particular class.
@@ -24,6 +26,7 @@ function handleUserInput(input: unknown): void {
     try {
         processUserInput(input);
     } catch (error) {
+        // narrowing error type:
         if (error instanceof TypeError) {
             console.error('Invalid input type:', error.message);
         } else if (error instanceof RangeError) {
